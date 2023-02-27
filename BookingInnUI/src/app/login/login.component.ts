@@ -52,13 +52,11 @@ export class LoginComponent {
   login(){   
      this.bookingService.getMaxBookingId().subscribe(     
       (value) => {
-        alert('Room successfully booking, please check your email!!')
+        alert('Room successfully booked, please check your email !!')
         console.log(value);
       this.maxid=value;   
 
       this.bookingService.updateBooking(this.maxid, this.b).subscribe(
-        // data => alert('Room successfully booking, please check your email!!'),
-        //  error => alert('Something is wrong, please try again!!')
          );
           this.router.navigate(['']);
       },
