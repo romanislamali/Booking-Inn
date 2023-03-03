@@ -15,8 +15,8 @@
                         <th>Long</th>
                         <th>Country</th>
                         <th>Description</th>
-                        <th>Photo</th>
-                        <th>Action</th>                 
+                        <th>Photo</th>                
+                        <th>Details</th>                
                     </tr>
                 </thead>
                 <tbody>
@@ -30,8 +30,8 @@
                         <td>{{l.ldescription}}</td>
                         <td>{{l.lphoto}}</td>
                         <td>
-                            <button class="btn btn-success" (click)="updateLocation(l.lid)">Update</button>
-                            <button class="btn btn-danger" (click)="deleteLocation(l.lid)">Delete</button>
+                            <button class="btn btn-success" (click)="updateLocation(l.lid)">See More</button>
+                            <!-- <button class="btn btn-danger" (click)="deleteLocation(l.lid)">Delete</button> -->
                         </td>
                     </tr>
                 </tbody>

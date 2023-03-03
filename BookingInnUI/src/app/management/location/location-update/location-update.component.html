@@ -3,13 +3,10 @@
     <div class="row" style="margin-top: 100px">
         <div class="col-2">
         </div>
-        <div class="card col-10" style="background-color: antiquewhite">
-            <div class="col-1 p-3">
-                <button class="btn btn-info" routerLink="/alllocation">See All</button>
-            </div>
-            <h1 class="text-center">Update Location</h1>
-            <button class="btn btn-info" routerLink="/alllocation">See All</button>
+        <div class="card col-10" style="background-color: antiquewhite">          
+            <h1 class="text-center">Location Details</h1>
             <form (ngSubmit)="locationUpdate()">
+                <input type="hidden"name="lid" [(ngModel)]="l.lid">
                 <input type="text" class="form-control" name="lname" placeholder="Location Name"
                     [(ngModel)]="l.lname">
                 <input type="text" class="form-control" name="lzipcode" placeholder="Zip Code"
@@ -25,9 +22,10 @@
                 <input type="file" class="form-control" name="lphoto" placeholder="Photo"
                     [(ngModel)]="l.lphoto">
                 <div class="col-1 p-3">
-                    <button class="btn btn-info">Submit</button>
-                </div>
-            </form>
+                    <button class="btn btn-info">Update</button> 
+                </div>                      
+            </form>                          
+            <button class="btn btn-danger" (click)="deleteL()">Delete</button>          
         </div>
     </div>
 </div>
