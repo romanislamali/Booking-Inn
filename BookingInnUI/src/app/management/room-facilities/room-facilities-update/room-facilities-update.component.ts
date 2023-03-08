@@ -29,19 +29,31 @@ export class RoomFacilitiesUpdateComponent {
     );
   }
 
+  
   roomFacilitiesUpdate(){
     this.roomFacService.updateRoomFacilities(this.id, this.rf).subscribe(
       data => alert('Roomfacilities updated successfull!!'),
-       error => alert('Something is wrong, please try again!!'));
-      //  this.ngOnInit();
-    this.router.navigate(['/allroomfacilities']);
-    
+       error => alert('Something is wrong, please try again!!'));   
+       this.router.navigate(['/allroomfacilities']);
   }
 
+  getRFid: number;
+  deleteFaci() {
+    let confirmAction = confirm("Are you sure to delete this room facilities?");
+    if (confirmAction) {
+      this.getRFid = this.id
+      this.deleteRFacilities(this.getRFid);
+    }
+  }
 
-
-
- 
-
-
+  deleteRFacilities(id: number) {
+    console.log(id);
+    this.roomFacService.deleteRoomFacilities(id).subscribe(
+      data => {
+        alert('Room facilities successfully deleted!!');
+        this.router.navigate(['/allroomfacilities']);
+      },
+      error => alert('Somethig wrong, please try again!!')
+    );
+  }
 }
