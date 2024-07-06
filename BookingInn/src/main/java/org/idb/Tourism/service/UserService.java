@@ -1,6 +1,6 @@
 package org.idb.Tourism.service;
 
-import org.idb.Tourism.entity.User;
+import org.idb.Tourism.entity.Customer;
 import org.idb.Tourism.repository.IUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +13,12 @@ public class UserService {
     @Autowired
     IUserRepo iUserRepo;
 
-    public List<User> getAllUser(){
+    public List<Customer> getAllUser(){
 
         return iUserRepo.findAll();
     }
 
-    public void saveUser(User u){
+    public void saveUser(Customer u){
         iUserRepo.save(u);
     }
 
@@ -26,7 +26,7 @@ public class UserService {
         iUserRepo.deleteById(uId);
     }
 
-    public User getById(int uId){
+    public Customer getById(int uId){
         return iUserRepo.findById(uId).get();
     }
 }

@@ -6,18 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Customer {
     @Id   // primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto_increment
     private int id;
-    @Column(length = 45,unique = true)
+    @Column(length = 45, unique = true)
     private String email;
     @Column(length = 64) // Encrypted mode with 64 charecter
     private String password;

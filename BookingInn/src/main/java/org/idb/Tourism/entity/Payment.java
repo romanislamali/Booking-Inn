@@ -36,7 +36,7 @@ public class Payment {
 
     @ManyToOne
     @JoinColumn(name = "uId")
-    User user;
+    Customer user;
 
 
 }
